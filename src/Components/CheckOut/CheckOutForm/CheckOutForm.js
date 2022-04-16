@@ -1,19 +1,38 @@
 import React, { useRef } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CheckOutForm = () => {
-  const emailRef = useRef();
-  const nameRef = useRef();
+  const emailRef = useRef("");
+  const nameRef = useRef("");
+  const addressRef = useRef("");
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
+    const email = emailRef.current.value;
+    const password = nameRef.current.value;
+    const address = addressRef.current.value;
 
+    if (!email || !password) {
+      toast.warn("Please Fill Up The Form!", {
+        position: "top-center",
+        autoClose: 2500,
+      });
+    } else {
+      toast.success("Thank You So Much For The Booking😃", {
+        position: "top-center",
+        autoClose: 2500,
+      });
 
-    
+      emailRef.current.value = "";
+      nameRef.current.value = "";
+      addressRef.current.value = "";
+    }
   };
 
   return (
     <div className="mx-auto mt-16 w-[40rem]">
-      <form>
+      <form onSubmit={handleSubmitForm}>
         <div className="flex gap-5 mb-2">
           <input
             ref={nameRef}
@@ -24,6 +43,7 @@ const CheckOutForm = () => {
             placeholder="Your Name..."
           />
           <input
+            ref={addressRef}
             className="py-2 px-2 border w-1/2"
             type="text"
             name="address"
@@ -54,6 +74,8 @@ const CheckOutForm = () => {
           Checkout
         </button>
       </form>
+
+      <ToastContainer theme="dark"></ToastContainer>
     </div>
   );
 };
