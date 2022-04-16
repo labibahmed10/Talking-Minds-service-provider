@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.postimg.cc/1tTzn3V6/service-5.png",
+    "name": "Depression Therapy",
+    "text": "Affordable, Professional Therapy from Any Device. Text, Chat & Video Options Available. Convenient, Discreet, Professional Online Therapy Anytime, Anywhere.",
+    "price": 345.99
+  },
+  {
+    "id": 2,
+    "image": "https://i.postimg.cc/Jntnzk0M/pic-serv1.png",
+    "name": "Couple's Counseling",
+    "text": "Couples therapy is a form of psychotherapy that can help you and your partner improve your relationship. ",
+    "price": 525.99
+  },
+  {
+    "id": 3,
+    "image": "https://i.postimg.cc/8sgP4XHz/service-6.png",
+    "name": "Relationship",
+    "text": "Premarital counseling is a type of relationship therapy that helps prepare couples to enter into a long-term commitment.",
+    "price": 285.99
+  },
+  {
+    "id": 4,
+    "image": "https://i.postimg.cc/7h2ZgrSR/2.png",
+    "name": "Stomach and Digestive Symptoms, Causes & Treatment",
+    "text": "Stomach massage is a gentle, noninvasive treatment you can do yourself or have done professionally.",
+    "price": 535.99
+  },
+  {
+    "id": 5,
+    "image": "https://i.postimg.cc/FKTzvZ9T/1.png",
+    "name": "Weekly Mental health Counseling",
+    "text": "Affordable, Professional Therapy from Any Device. Text, Chat & Video Options Available. Convenient, Discreet, Professional Online Therapy Anytime, Anywhere.",
+    "price": 145.99
+  }
+]
