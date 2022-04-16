@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import auth from "../../../firebase.init";
 import logo from "../../../images/logo.svg";
 import CommonSignIn from "../CommonSignIn/CommonSignIn";
+
 const SignUp = () => {
+  const emailRef = useRef("");
+  const nameRef = useRef("");
+  const passRef = useRef("");
+  const conPassRef = useRef("");
+
+  const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+
   return (
     <div className="w-[34rem] mx-auto mt-24">
       <div>
@@ -11,6 +23,7 @@ const SignUp = () => {
       <div className="mt-10 px-8">
         <form action="">
           <input
+            ref={nameRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
             type="text"
             name="name"
@@ -18,6 +31,7 @@ const SignUp = () => {
             placeholder="Your Name"
           />
           <input
+            ref={emailRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
             type="email"
             name="email"
@@ -25,6 +39,7 @@ const SignUp = () => {
             placeholder="Your Email"
           />
           <input
+            ref={passRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
             type="password"
             name="password"
@@ -32,6 +47,7 @@ const SignUp = () => {
             placeholder="Your Password"
           />
           <input
+            ref={conPassRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
             type="password"
             name="conPassword"
@@ -53,6 +69,7 @@ const SignUp = () => {
           </p>
         </form>
         <CommonSignIn></CommonSignIn>
+        <ToastContainer></ToastContainer>
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import React from "react";
 import auth from "../../../firebase.init";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   useSignInWithGoogle,
   useSignInWithGithub,
@@ -7,6 +9,7 @@ import {
   useSignInWithTwitter,
 } from "react-firebase-hooks/auth";
 import SpinnerLoading from "../../Spinner/SpinnerLoading";
+import { toast, ToastContainer } from "react-toastify";
 
 const CommonSignIn = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -16,6 +19,13 @@ const CommonSignIn = () => {
 
   if (loading || Gloading || Floading || Tloading) {
     return <SpinnerLoading></SpinnerLoading>;
+  }
+
+  if (user || Guser || Fuser || Tuser) {
+    toast.success("Log In Succesfull😃", {
+      position: "top-center",
+      autoClose: 2000,
+    });
   }
 
   return (
@@ -55,6 +65,8 @@ const CommonSignIn = () => {
           />
         </div>
       </div>
+
+      <ToastContainer theme="dark"></ToastContainer>
     </div>
   );
 };
