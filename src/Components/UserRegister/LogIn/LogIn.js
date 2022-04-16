@@ -13,17 +13,17 @@ const LogIn = () => {
         <form action="">
           <input
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your Name"
-          />
-          <input
-            className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
             type="email"
             name="email"
             id="email"
             placeholder="Your Email"
+          />
+          <input
+            className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Your Password"
           />
 
           <input
