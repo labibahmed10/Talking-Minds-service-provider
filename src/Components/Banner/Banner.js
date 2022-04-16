@@ -11,7 +11,7 @@ const Banner = () => {
 
         <h2 className="text-3xl">
           I Care About Your Health More Than You do. <br />
-          With Years Of Expeience & 35+ Patients Handling.
+          With Years Of Expeience & 115+ Patients Handling.
         </h2>
 
         <button className="my-6 py-3 px-5 bg-[#26ABA3] rounded-full font-semibold">Get a Consultaion</button>

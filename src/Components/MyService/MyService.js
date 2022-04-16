@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+import { ServiceContext } from "../../App";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 const MyService = () => {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useContext(ServiceContext);
 
   useEffect(() => {
     fetch("/service.json")
@@ -20,7 +21,7 @@ const MyService = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 py-20 px-20">
+      <div className="grid grid-cols-3 gap-10 py-20 px-20  place-items-center">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>
         ))}
