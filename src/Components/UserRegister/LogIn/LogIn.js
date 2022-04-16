@@ -1,5 +1,5 @@
 import React from "react";
-import CommonSignIn from "../CommonSignIn";
+import CommonSignIn from "../CommonSignIn/CommonSignIn";
 import logo from "../../../images/logo.svg";
 import { Link } from "react-router-dom";
 

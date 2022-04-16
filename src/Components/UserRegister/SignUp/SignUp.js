@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.svg";
-import CommonSignIn from "../CommonSignIn";
+import CommonSignIn from "../CommonSignIn/CommonSignIn";
 const SignUp = () => {
   return (
     <div className="w-[34rem] mx-auto mt-24">

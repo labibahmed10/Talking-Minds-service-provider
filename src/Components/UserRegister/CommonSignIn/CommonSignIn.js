@@ -1,17 +1,22 @@
 import React from "react";
-import auth from "../../firebase.init";
+import auth from "../../../firebase.init";
 import {
   useSignInWithGoogle,
   useSignInWithGithub,
   useSignInWithFacebook,
   useSignInWithTwitter,
 } from "react-firebase-hooks/auth";
+import SpinnerLoading from "../../Spinner/SpinnerLoading";
 
 const CommonSignIn = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, Guser, Gloading, Gerror] = useSignInWithGithub(auth);
   const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
   const [signInWithTwitter, Tuser, Tloading, Terror] = useSignInWithTwitter(auth);
+
+  if (loading || Gloading || Floading || Tloading) {
+    return <SpinnerLoading></SpinnerLoading>;
+  }
 
   return (
     <div>
