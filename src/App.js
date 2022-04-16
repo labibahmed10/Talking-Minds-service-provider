@@ -4,6 +4,7 @@ import "./App.css";
 import CheckOut from "./Components/CheckOut/CheckOut";
 import HomePage from "./Components/HomePage/HomePage";
 import Navbar from "./Components/Navbar/Navbar";
+import LogIn from "./Components/UserRegister/LogIn/LogIn";
 
 export const ServiceContext = createContext([]);
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<HomePage></HomePage>}></Route>
           <Route path="/service/:sID" element={<CheckOut></CheckOut>}></Route>
+          <Route path="/login" element={<LogIn></LogIn>}></Route>
         </Routes>
       </ServiceContext.Provider>
     </div>
