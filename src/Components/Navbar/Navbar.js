@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
+  const navigate = useNavigate();
   return (
-    <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-3 bg-[#F4FCFA] text-[1.1rem] font-semibold relative">
-      <img src={logo} alt="" />
+    <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-3 bg-[#F4FCFA] text-[1.1rem] font-semibold relative shadow-lg">
+      <img onClick={() => navigate("/home")} className="cursor-pointer" src={logo} alt="" />
 
       <div onClick={() => setShowNav(!showNav)} className="sm:hidden cursor-pointer">
         <GiHamburgerMenu></GiHamburgerMenu>
