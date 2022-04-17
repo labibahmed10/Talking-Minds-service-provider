@@ -33,6 +33,7 @@ const SignUp = () => {
         position: "top-center",
         autoClose: 2500,
       });
+      return;
     }
 
     if (password !== conPass) {
@@ -40,6 +41,14 @@ const SignUp = () => {
         position: "top-center",
         autoClose: 2500,
       });
+      return;
+    }
+    if (password.length < 8) {
+      toast.warn("Password is too short", {
+        position: "top-center",
+        autoClose: 2500,
+      });
+      return;
     } else {
       createUserWithEmailAndPassword(email, password);
     }
@@ -89,6 +98,8 @@ const SignUp = () => {
             placeholder="Confirm Password"
           />
 
+          {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
+
           <div className="flex items-center space-x-1">
             <input
               onClick={() => setChecked(!check)}
@@ -102,11 +113,11 @@ const SignUp = () => {
 
           <input
             disabled={!check}
-            className={`w-full my-3 py-3 text-lg font-semibold text-[aliceblue] ${
+            className={`w-full my-3 py-3 text-lg font-semibold text-[aliceblue] cursor-pointer ${
               check ? "bg-[#26ABA3]" : "bg-[#15615c]"
             }`}
             type="submit"
-            value="SignUp"
+            value="Register"
           />
 
           <p className="text-center">

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import CommonSignIn from "../CommonSignIn/CommonSignIn";
 import logo from "../../../images/logo.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +18,8 @@ const LogIn = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
+  const [sendPasswordResetEmail, sending, Perror] = useSendPasswordResetEmail(auth);
+
   const handleSignInUserForm = (event) => {
     event.preventDefault();
 
@@ -32,6 +34,15 @@ const LogIn = () => {
     } else {
       signInWithEmailAndPassword(email, password);
     }
+  };
+
+  const sendPassResetEmail = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    toast("Check Your Email to Reset Password", {
+      position: "top-center",
+      autoClose: 2000,
+    });
   };
 
   if (user) {
@@ -69,7 +80,7 @@ const LogIn = () => {
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
 
           <input
-            className="w-full py-3 my-2 bg-[#26ABA3] text-lg font-semibold text-[aliceblue]"
+            className="w-full py-3 my-2 bg-[#26ABA3] text-lg font-semibold text-[aliceblue] cursor-pointer"
             type="submit"
             value="LogIn"
           />
@@ -77,12 +88,15 @@ const LogIn = () => {
           <p className="text-center py-2 text-gray-500">
             New In Talking Minds?{" "}
             <Link className="hover:underline underline-offset-1 hover:text-[#26ABA3]" to="/signup">
-              Sign Up For Free
+              Register For Free
             </Link>
           </p>
 
           <p className="text-center  mb-2 text-gray-500">
-            <button className="hover:underline underline-offset-1 hover:text-[#26ABA3]">
+            <button
+              onClick={sendPassResetEmail}
+              className="hover:underline underline-offset-1 hover:text-[#26ABA3]"
+            >
               Forgot Your Password?
             </button>
           </p>

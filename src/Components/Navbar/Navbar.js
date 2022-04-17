@@ -75,7 +75,7 @@ const Navbar = () => {
           }
           to="signup"
         >
-          SignUp
+          Register
         </NavLink>
       </div>
     </div>

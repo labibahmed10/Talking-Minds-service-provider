@@ -6,7 +6,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import Navbar from "./Components/Navbar/Navbar";
 import LogIn from "./Components/UserRegister/LogIn/LogIn";
 import RequireAuth from "./Components/UserRegister/RequireAuth/RequireAuth";
-import SignUp from "./Components/UserRegister/SignUp/SignUp";
+import SignUp from "./Components/UserRegister/Register/Register";
 
 export const ServiceContext = createContext([]);
 
@@ -18,6 +18,7 @@ function App() {
       <Navbar></Navbar>
       <ServiceContext.Provider value={[services, setServices]}>
         <Routes>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
           <Route path="/home" element={<HomePage></HomePage>}></Route>
           <Route
             path="/service/:sID"
