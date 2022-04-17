@@ -29,7 +29,7 @@ const CommonSignIn = () => {
   }
 
   return (
-    <div>
+    <div className="mb-10">
       <div className="flex items-center px-12 ">
         <hr className="w-1/2" />
         <p className="px-2">or</p>

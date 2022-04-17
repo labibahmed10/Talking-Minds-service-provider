@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import CheckOut from "./Components/CheckOut/CheckOut";
@@ -11,11 +11,17 @@ import NotFound from "./Components/NotFound/NotFound";
 import MyBlogs from "./Components/MyBlogs/MyBlogs";
 import About from "./Components/About/About";
 import Footer from "./Components/Footer/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const ServiceContext = createContext([]);
 
 function App() {
   const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div>

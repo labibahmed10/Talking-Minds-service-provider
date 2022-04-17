@@ -31,7 +31,7 @@ const CheckOutForm = () => {
   };
 
   return (
-    <div className="mx-auto mt-16 w-[40rem]">
+    <div className="mx-auto my-16 w-[40rem]">
       <form onSubmit={handleSubmitForm}>
         <div className="flex gap-5 mb-2">
           <input

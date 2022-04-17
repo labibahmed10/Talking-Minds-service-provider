@@ -12,8 +12,11 @@ const MyService = () => {
   }, []);
 
   return (
-    <div className="my-44 bg-[#F4FCFA] py-20">
-      <div className="text-center">
+    <div
+     
+      className="my-44 bg-[#F4FCFA] py-20"
+    >
+      <div  className="text-center">
         <h1 className="text-5xl font-bold py-5">What I'm Offering</h1>
         <p className="text-2xl">
           Consulting Experience untill you get fixed.I will check <br /> up every week no matter where you

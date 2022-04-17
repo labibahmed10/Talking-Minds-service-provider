@@ -4,7 +4,13 @@ import doctor from "../../images/doctor.png";
 const Banner = () => {
   return (
     <div className="background h-[40rem] flex items-center justify-evenly">
-      <div className="text-[aliceblue]">
+      <div
+        data-aos="fade-right"
+        // data-aos-offset="1000"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="1000"
+        className="text-[aliceblue]"
+      >
         <h1 className="uppercase text-5xl font-semibold mb-8">
           Private mental health <br /> consultation from a <br /> professional
         </h1>
@@ -17,7 +23,12 @@ const Banner = () => {
         <button className="my-6 py-3 px-5 bg-[#26ABA3] rounded-full font-semibold">Get a Consultaion</button>
       </div>
 
-      <div>
+      <div
+        data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="00"
+        data-aos-duration="1500"
+      >
         <img className="w-96" src={doctor} alt="" />
       </div>
     </div>

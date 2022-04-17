@@ -7,7 +7,12 @@ const ServiceCard = ({ service }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="p-8 bg-white text-[#1e242c] rounded-2xl flex flex-col justify-between xl:w-96 h-full">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      data-aos-anchor-placement="center-bottom"
+      className="p-8 bg-white text-[#1e242c] rounded-2xl flex flex-col justify-between xl:w-96 h-full"
+    >
       <img className="mx-auto" src={image} alt="" />
       <div className="py-4">
         <h1 className="text-3xl font-semibold pb-3">{name}</h1>
