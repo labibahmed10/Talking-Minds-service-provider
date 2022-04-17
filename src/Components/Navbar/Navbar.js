@@ -16,16 +16,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-3 bg-[#F4FCFA] text-[1.1rem] font-semibold relative shadow-lg">
+    <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-4 bg-[#F4FCFA] text-[1.1rem] font-semibold  shadow-lg">
       <img onClick={() => navigate("/home")} className="cursor-pointer" src={logo} alt="" />
 
-      <div onClick={() => setShowNav(!showNav)} className="sm:hidden cursor-pointer">
+      <div onClick={() => setShowNav(!showNav)} className="sm:hidden cursor-pointer relative">
         <GiHamburgerMenu></GiHamburgerMenu>
       </div>
 
       <div
-        className={`sm:space-x-8 flex sm:flex-row flex-col absolute  sm:static ${
-          showNav ? "block items-center top-12 right-0 duration-500 bg-[#F4FCFA] w-full p-4" : "top-[-300px]"
+        className={`sm:space-x-8 flex sm:flex-row flex-col absolute sm:static ${
+          showNav ? "items-end top-16 right-0 duration-500 bg-[#F4FCFA] w-full p-4 block" : "top-[-300px]"
         }`}
       >
         <NavLink

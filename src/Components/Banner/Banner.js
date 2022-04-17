@@ -3,7 +3,7 @@ import doctor from "../../images/doctor.png";
 
 const Banner = () => {
   return (
-    <div className="background h-full py-20 flex md:flex-row flex-col-reverse items-center md:justify-around">
+    <div className="background h-full py-20 flex md:flex-row flex-col-reverse items-center md:justify-around ">
       <div
         data-aos="fade-right"
         // data-aos-offset="1000"
@@ -29,7 +29,7 @@ const Banner = () => {
         data-aos-offset="00"
         data-aos-duration="1500"
       >
-        <img className="w-96 block" src={doctor} alt="" />
+        <img className="w-96 block md:mt-0 mt-20" src={doctor} alt="" />
       </div>
     </div>
   );

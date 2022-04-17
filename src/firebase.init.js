@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD_Fg58BPtBzpXCvWxGf-dpp_mjXWcp-QA",
-  authDomain: "talkingminds-d1263.firebaseapp.com",
-  projectId: "talkingminds-d1263",
-  storageBucket: "talkingminds-d1263.appspot.com",
-  messagingSenderId: "61242155325",
-  appId: "1:61242155325:web:11ffaf58f18366d6cca554",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

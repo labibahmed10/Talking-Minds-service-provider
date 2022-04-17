@@ -8,7 +8,7 @@ import logo from "../../../images/logo.svg";
 import SpinnerLoading from "../../Spinner/SpinnerLoading";
 import CommonSignIn from "../CommonSignIn/CommonSignIn";
 
-const SignUp = () => {
+const Register = () => {
   const emailRef = useRef("");
   const nameRef = useRef("");
   const passRef = useRef("");
@@ -72,6 +72,7 @@ const SignUp = () => {
             name="name"
             id="name"
             placeholder="Your Name"
+            required
           />
           <input
             ref={emailRef}
@@ -88,6 +89,7 @@ const SignUp = () => {
             name="password"
             id="password"
             placeholder="Your Password"
+            required
           />
           <input
             ref={conPassRef}
@@ -96,6 +98,7 @@ const SignUp = () => {
             name="conPassword"
             id="conPass"
             placeholder="Confirm Password"
+            required
           />
 
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
@@ -134,4 +137,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Register;

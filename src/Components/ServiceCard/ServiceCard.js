@@ -8,10 +8,10 @@ const ServiceCard = ({ service }) => {
 
   return (
     <div
-      data-aos="fade-up"
+      data-aos="fade-down"
       data-aos-duration="1200"
       data-aos-anchor-placement="center-bottom"
-      className="p-8 bg-white text-[#1e242c] rounded-2xl flex flex-col justify-between xl:w-96 h-full"
+      className="p-8 bg-white text-[#1e242c] rounded-2xl flex flex-col justify-between xl:w-96 h-full transform transition hover:scale-110 duration-500"
     >
       <img className="mx-auto" src={image} alt="" />
       <div className="py-4">

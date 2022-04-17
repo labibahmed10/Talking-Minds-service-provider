@@ -6,7 +6,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import Navbar from "./Components/Navbar/Navbar";
 import LogIn from "./Components/UserRegister/LogIn/LogIn";
 import RequireAuth from "./Components/UserRegister/RequireAuth/RequireAuth";
-import SignUp from "./Components/UserRegister/Register/Register";
+import Register from "./Components/UserRegister/Register/Register";
 import NotFound from "./Components/NotFound/NotFound";
 import MyBlogs from "./Components/MyBlogs/MyBlogs";
 import About from "./Components/About/About";
@@ -41,7 +41,7 @@ function App() {
           <Route path="/blogs" element={<MyBlogs></MyBlogs>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/login" element={<LogIn></LogIn>}></Route>
-          <Route path="/signup" element={<SignUp></SignUp>}></Route>
+          <Route path="/signup" element={<Register></Register>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
 

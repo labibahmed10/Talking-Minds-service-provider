@@ -67,6 +67,7 @@ const LogIn = () => {
             name="email"
             id="email"
             placeholder="Your Email"
+            required
           />
           <input
             ref={passRef}
@@ -75,6 +76,7 @@ const LogIn = () => {
             name="password"
             id="password"
             placeholder="Your Password"
+            required
           />
 
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}

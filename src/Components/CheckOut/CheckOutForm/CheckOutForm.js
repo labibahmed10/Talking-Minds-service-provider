@@ -36,7 +36,7 @@ const CheckOutForm = () => {
         <div className="flex gap-5 mb-2">
           <input
             ref={nameRef}
-            className="py-2 px-2 border w-1/2"
+            className="py-4 px-2 border w-1/2"
             type="text"
             name="name"
             id="name"
@@ -44,7 +44,7 @@ const CheckOutForm = () => {
           />
           <input
             ref={addressRef}
-            className="py-2 px-2 border w-1/2"
+            className="py-4 px-2 border w-1/2"
             type="text"
             name="address"
             id="adress"
@@ -54,12 +54,12 @@ const CheckOutForm = () => {
         <div className="flex gap-5 mb-3">
           <input
             ref={emailRef}
-            className="py-2 px-2 border w-1/2"
+            className="py-4 px-2 border w-1/2"
             type="email"
             name="email"
             placeholder="Your Email..."
           />
-          <input className="py-2 px-2 border w-1/2" type="number" placeholder="Your Number..(optional)" />
+          <input className="py-4 px-2 border w-1/2" type="number" placeholder="Your Number..(optional)" />
         </div>
         <textarea
           className="w-full border resize-none p-4"
@@ -67,10 +67,10 @@ const CheckOutForm = () => {
           id=""
           cols="50"
           rows="5"
-          placeholder="Text To Us"
+          placeholder="Leave a Message"
         ></textarea>
 
-        <button className="block mx-auto mt-4 py-2 px-4 bg-[#26ABA3] text-[aliceblue] rounded-full">
+        <button className="block mx-auto mt-4 py-3 px-5 bg-[#26ABA3] text-[aliceblue] rounded-full">
           Checkout
         </button>
       </form>
