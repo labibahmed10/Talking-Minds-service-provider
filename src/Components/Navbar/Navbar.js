@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+
   return (
     <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-3 bg-[#F4FCFA] text-[1.1rem] font-semibold relative shadow-lg">
       <img onClick={() => navigate("/home")} className="cursor-pointer" src={logo} alt="" />
@@ -43,14 +47,24 @@ const Navbar = () => {
         >
           About
         </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-[#26ABA3] underline underline-offset-2" : "text-slate-500"
-          }
-          to="login"
-        >
-          LogIn
-        </NavLink>
+        {user ? (
+          <button
+            className={({ isActive }) =>
+              isActive ? "text-[#26ABA3] underline underline-offset-2" : "text-slate-500"
+            }
+          >
+            Log Out
+          </button>
+        ) : (
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "text-[#26ABA3] underline underline-offset-2" : "text-slate-500"
+            }
+            to="login"
+          >
+            LogIn
+          </NavLink>
+        )}
         <NavLink
           className={({ isActive }) =>
             isActive ? "text-[#26ABA3] underline underline-offset-2" : "text-slate-500"

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,13 +14,14 @@ const SignUp = () => {
   const passRef = useRef("");
   const conPassRef = useRef("");
 
+  const [check, setChecked] = useState();
   const navigate = useNavigate();
 
   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, {
     sendEmailVerification: true,
   });
 
-  const handleSignUpForm = (event) => {
+  const handleCreateUserForm = (event) => {
     event.preventDefault();
     const name = nameRef.current.value;
     const email = emailRef.current.value;
@@ -44,10 +45,6 @@ const SignUp = () => {
     }
   };
 
-  if (loading) {
-    return <SpinnerLoading></SpinnerLoading>;
-  }
-
   if (user) {
     navigate("/login");
   }
@@ -58,7 +55,7 @@ const SignUp = () => {
         <img className="mx-auto" src={logo} alt="" />
       </div>
       <div className="mt-10 px-8">
-        <form onSubmit={handleSignUpForm}>
+        <form onSubmit={handleCreateUserForm}>
           <input
             ref={nameRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
@@ -92,8 +89,22 @@ const SignUp = () => {
             placeholder="Confirm Password"
           />
 
+          <div className="flex items-center space-x-1">
+            <input
+              onClick={() => setChecked(!check)}
+              className="w-4 h-5"
+              type="checkbox"
+              name="check"
+              id="check"
+            />
+            <label htmlFor="check">I Agree With The Terms & Condition</label>
+          </div>
+
           <input
-            className="w-full my-3 py-3 bg-[#26ABA3] text-lg font-semibold text-[aliceblue]"
+            disabled={!check}
+            className={`w-full my-3 py-3 text-lg font-semibold text-[aliceblue] ${
+              check ? "bg-[#26ABA3]" : "bg-[#15615c]"
+            }`}
             type="submit"
             value="SignUp"
           />
