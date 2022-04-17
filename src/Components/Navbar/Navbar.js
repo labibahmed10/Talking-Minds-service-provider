@@ -4,11 +4,16 @@ import logo from "../../images/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth);
+  };
 
   return (
     <div className="flex items-center justify-between md:px-20 px-6 md:py-4 py-3 bg-[#F4FCFA] text-[1.1rem] font-semibold relative shadow-lg">
@@ -49,9 +54,8 @@ const Navbar = () => {
         </NavLink>
         {user ? (
           <button
-            className={({ isActive }) =>
-              isActive ? "text-[#26ABA3] underline underline-offset-2" : "text-slate-500"
-            }
+            onClick={logout}
+            className="hover:text-[#26ABA3] hover:underline underline-offset-2 text-slate-500 font-semibold"
           >
             Log Out
           </button>
