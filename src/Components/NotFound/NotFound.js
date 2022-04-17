@@ -10,7 +10,7 @@ const NotFound = () => {
         <h1 className="md:text-6xl sm:text-4xl text-3xl mt-20 text-[aliceblue] mx-auto">Oopppppppssss</h1>
         <button
           onClick={() => navigate("/")}
-          className="sm:text-xl md:text-2xl text-xl py-2 sm:mt-10 mt-5 mx-auto bg-[#26ABA3] rounded-full px-3  text-[aliceblue]"
+          className="sm:text-xl md:text-2xl text-xl py-2 sm:mt-10 mt-5 mx-auto bg-[#26ABA3] rounded-full px-5  text-[aliceblue]"
         >
           Back To Homepage
         </button>

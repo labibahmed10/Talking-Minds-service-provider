@@ -10,6 +10,7 @@ import SignUp from "./Components/UserRegister/Register/Register";
 import NotFound from "./Components/NotFound/NotFound";
 import MyBlogs from "./Components/MyBlogs/MyBlogs";
 import About from "./Components/About/About";
+import Footer from "./Components/Footer/Footer";
 
 export const ServiceContext = createContext([]);
 
@@ -37,6 +38,8 @@ function App() {
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
+
+        <Footer></Footer>
       </ServiceContext.Provider>
     </div>
   );
