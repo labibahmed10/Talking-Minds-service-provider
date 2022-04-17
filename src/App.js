@@ -9,6 +9,7 @@ import RequireAuth from "./Components/UserRegister/RequireAuth/RequireAuth";
 import SignUp from "./Components/UserRegister/Register/Register";
 import NotFound from "./Components/NotFound/NotFound";
 import MyBlogs from "./Components/MyBlogs/MyBlogs";
+import About from "./Components/About/About";
 
 export const ServiceContext = createContext([]);
 
@@ -31,6 +32,7 @@ function App() {
             }
           ></Route>
           <Route path="/blogs" element={<MyBlogs></MyBlogs>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
           <Route path="/login" element={<LogIn></LogIn>}></Route>
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>

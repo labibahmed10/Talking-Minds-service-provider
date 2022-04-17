@@ -50,7 +50,7 @@ const Navbar = () => {
           }
           to="/about"
         >
-          About
+          About Me
         </NavLink>
         {user ? (
           <button
