@@ -4,7 +4,7 @@ const SpinnerLoading = () => {
   return (
     <svg
       role="status"
-      class="block mx-auto w-16  text-gray-200 animate-spin dark:text-gray-100 fill-[#26ABA3]"
+      class="block h-[90vh] mx-auto w-16  text-gray-200 animate-spin dark:text-gray-100 fill-[#26ABA3]"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
 import logo from "../../../images/logo.svg";
+import SpinnerLoading from "../../Spinner/SpinnerLoading";
 import CommonSignIn from "../CommonSignIn/CommonSignIn";
 
 const SignUp = () => {
@@ -13,7 +14,43 @@ const SignUp = () => {
   const passRef = useRef("");
   const conPassRef = useRef("");
 
-  const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, {
+    sendEmailVerification: true,
+  });
+
+  const handleSignUpForm = (event) => {
+    event.preventDefault();
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passRef.current.value;
+    const conPass = conPassRef.current.value;
+
+    if (!name || !password || !email || !conPass) {
+      toast.error("Please Fill Up The Form", {
+        position: "top-center",
+        autoClose: 2500,
+      });
+    }
+
+    if (password !== conPass) {
+      toast.error("Password Did Not Matched!,Try Again!", {
+        position: "top-center",
+        autoClose: 2500,
+      });
+    } else {
+      createUserWithEmailAndPassword(email, password);
+    }
+  };
+
+  if (loading) {
+    return <SpinnerLoading></SpinnerLoading>;
+  }
+
+  if (user) {
+    navigate("/login");
+  }
 
   return (
     <div className="w-[34rem] mx-auto mt-24">
@@ -21,7 +58,7 @@ const SignUp = () => {
         <img className="mx-auto" src={logo} alt="" />
       </div>
       <div className="mt-10 px-8">
-        <form action="">
+        <form onSubmit={handleSignUpForm}>
           <input
             ref={nameRef}
             className="w-full bg-[#F4FCFA] mb-3 py-4 px-3 mx-auto focus:outline outline-[#26ABA3]"
@@ -69,7 +106,7 @@ const SignUp = () => {
           </p>
         </form>
         <CommonSignIn></CommonSignIn>
-        <ToastContainer></ToastContainer>
+        <ToastContainer theme="dark"></ToastContainer>
       </div>
     </div>
   );
