@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import LogIn from "./Components/UserRegister/LogIn/LogIn";
 import RequireAuth from "./Components/UserRegister/RequireAuth/RequireAuth";
 import SignUp from "./Components/UserRegister/Register/Register";
+import NotFound from "./Components/NotFound/NotFound";
 
 export const ServiceContext = createContext([]);
 
@@ -30,6 +31,7 @@ function App() {
           ></Route>
           <Route path="/login" element={<LogIn></LogIn>}></Route>
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
+          <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </ServiceContext.Provider>
     </div>
