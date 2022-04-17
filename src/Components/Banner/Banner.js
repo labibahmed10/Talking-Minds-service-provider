@@ -3,15 +3,15 @@ import doctor from "../../images/doctor.png";
 
 const Banner = () => {
   return (
-    <div className="background h-[40rem] flex items-center justify-evenly">
+    <div className="background h-full py-20 flex md:flex-row flex-col-reverse items-center md:justify-around">
       <div
         data-aos="fade-right"
         // data-aos-offset="1000"
         data-aos-easing="ease-in-sine"
         data-aos-duration="1000"
-        className="text-[aliceblue]"
+        className="text-[aliceblue] md:pt-0 pt-10 pl-5"
       >
-        <h1 className="uppercase text-5xl font-semibold mb-8">
+        <h1 className="uppercase md:text-5xl text-3xl font-semibold mb-8">
           Private mental health <br /> consultation from a <br /> professional
         </h1>
 
@@ -29,7 +29,7 @@ const Banner = () => {
         data-aos-offset="00"
         data-aos-duration="1500"
       >
-        <img className="w-96" src={doctor} alt="" />
+        <img className="w-96 block" src={doctor} alt="" />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import logo from "../../images/logo.svg";
 const Footer = () => {
   return (
     <div className="pt-16 pb-5 bg-[#F4FCFA] text-slate-500">
-      <div className="flex justify-around">
-        <div className="flex gap-12">
+      <div className="flex md:flex-row flex-col-reverse md:justify-around mb-10">
+        <div className="flex justify-between md:justify-around md:gap-40 px-5 md:px-0 mt-10 sm:mt-0">
           <div className="leading-8">
             <h1 className="text-2xl font-semibold">Quick Links</h1>
             <p>Learn More</p>
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
+        <div className="mx-auto md:mx-0">
           <img src={logo} alt="" />
           <h2>Email: info@talkingminds.com</h2>
           <h2>Phone: 0163******0</h2>

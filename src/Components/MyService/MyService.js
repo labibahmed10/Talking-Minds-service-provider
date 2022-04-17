@@ -12,19 +12,16 @@ const MyService = () => {
   }, []);
 
   return (
-    <div
-     
-      className="my-44 bg-[#F4FCFA] py-20"
-    >
-      <div  className="text-center">
-        <h1 className="text-5xl font-bold py-5">What I'm Offering</h1>
-        <p className="text-2xl">
+    <div className="my-44 bg-[#F4FCFA] md:py-20 py-12">
+      <div className="text-center text-slate-600">
+        <h1 className="md:text-5xl text-4xl font-bold py-5">What I'm Offering</h1>
+        <p className="md:text-2xl font-semibold">
           Consulting Experience untill you get fixed.I will check <br /> up every week no matter where you
           are.
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-10 py-20 px-20  place-items-center">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-10 py-20 md:px-20 px-10 place-items-center">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>
         ))}
