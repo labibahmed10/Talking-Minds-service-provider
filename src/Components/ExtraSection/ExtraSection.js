@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../images/heart.png";
+import { motion } from "framer-motion";
 
 const ExtraSection = () => {
   return (
@@ -24,9 +25,14 @@ const ExtraSection = () => {
         <button className="mt-8 py-2 px-5 bg-[#26ABA3] rounded-full text-[aliceblue]">Contact Us</button>
       </div>
 
-      <div>
+      <motion.div
+        animate={{
+          scale: 0.9,
+          transition: { duration: 0.5, yoyo: Infinity },
+        }}
+      >
         <img className="mx-auto" src={image} alt="" />
-      </div>
+      </motion.div>
     </div>
   );
 };
