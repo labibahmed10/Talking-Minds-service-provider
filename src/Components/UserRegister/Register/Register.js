@@ -63,7 +63,7 @@ const Register = () => {
   }
 
   return (
-    <div className="w-[34rem] mx-auto mt-24">
+    <div className="sm:w-[34rem] mx-auto sm:mt-32 mt-40">
       {/* logo */}
       <div>
         <img className="mx-auto" src={logo} alt="" />

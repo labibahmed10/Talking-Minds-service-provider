@@ -30,7 +30,7 @@ const CommonSignIn = () => {
 
   if (error || Gerror || Ferror || Terror) {
     toast(`${error?.message || Gerror?.message || Ferror?.message || Terror?.message}`, {
-      autoClose: 1000,
+      autoClose: 2100,
     });
   }
 
