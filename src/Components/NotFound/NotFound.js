@@ -5,6 +5,7 @@ import "./NotFound.css";
 const NotFound = () => {
   const navigate = useNavigate();
   return (
+    // image added by using custom css
     <div className="backgrounderror h-[92.2vh] flex sm:items-center items-start sm:justify-start justify-center">
       <div className="sm:ml-10">
         <h1 className="md:text-6xl sm:text-4xl text-3xl mt-20 text-[aliceblue] mx-auto">Oopppppppssss</h1>

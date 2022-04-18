@@ -7,6 +7,7 @@ const ServiceCard = ({ service }) => {
   const navigate = useNavigate();
 
   return (
+    // have used AOS animation
     <div
       data-aos="fade-down"
       data-aos-duration="1200"

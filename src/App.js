@@ -19,6 +19,7 @@ export const ServiceContext = createContext([]);
 function App() {
   const [services, setServices] = useState([]);
 
+  // AOS animation
   useEffect(() => {
     AOS.init();
   }, []);
@@ -44,8 +45,8 @@ function App() {
           <Route path="/signup" element={<Register></Register>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
-
         <Footer></Footer>
+        {/* <ReactLeaflet></ReactLeaflet> */}
       </ServiceContext.Provider>
     </div>
   );

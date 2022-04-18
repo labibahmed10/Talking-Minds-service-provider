@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const ExtraSection = () => {
   return (
     <div className="md:py-36 py-24 mb-28 bg-[#F4FCFA] flex md:flex-row flex-col-reverse md:justify-evenly text-slate-600">
+      {/* Aos animation for left texts */}
       <div
         data-aos="fade-right"
         data-aos-offset="400"
@@ -25,6 +26,7 @@ const ExtraSection = () => {
         <button className="mt-8 py-2 px-5 bg-[#26ABA3] rounded-full text-[aliceblue]">Contact Us</button>
       </div>
 
+      {/* Framer motion library used for the heart pic */}
       <motion.div
         animate={{
           scale: 0.9,

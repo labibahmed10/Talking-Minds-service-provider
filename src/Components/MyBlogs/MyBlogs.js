@@ -3,6 +3,7 @@ import React from "react";
 const MyBlogs = () => {
   return (
     <div className="mt-10 px-10">
+      {/* first question */}
       <div className="text-justify sm:mt-16">
         <h1 className="text-center text-3xl font-semibold py-5 text-[#26ABA3]">
           Q1. Differences Between Authentication and Authorization
@@ -19,6 +20,7 @@ const MyBlogs = () => {
         </p>
       </div>
 
+      {/* second question */}
       <div className="text-justify sm:mt-16">
         <h1 className="text-center text-3xl font-semibold py-5 text-[#26ABA3]">
           Why are you using firebase? What other options do you have to implement authentication?
@@ -35,6 +37,8 @@ const MyBlogs = () => {
           3.Kinvey. etc
         </p>
       </div>
+
+      {/* third question */}
       <div className="text-justify sm:mt-16 mb-10">
         <h1 className="text-center text-3xl font-semibold py-5 text-[#26ABA3]">
           What other services does firebase provide other than authentication?
@@ -46,7 +50,7 @@ const MyBlogs = () => {
           4.Hosting. <br />
           5.Realtime Database. <br />
           5.Cloud Firestore. <br />
-          6. Cloud Messaging.
+          6.Cloud Messaging.
         </p>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import auth from "../../../firebase.init";
 import "react-toastify/dist/ReactToastify.css";
-
 import {
   useSignInWithGoogle,
   useSignInWithGithub,
@@ -22,19 +21,29 @@ const CommonSignIn = () => {
   }
 
   if (user || Guser || Fuser || Tuser) {
-    toast.success("Log In Succesfull😃", {
+    console.log();
+    toast.success(`Log In Succesfull 😃 ${user?.user?.displayName ? user?.user?.displayName : ""}`, {
       position: "top-center",
       autoClose: 2000,
     });
   }
 
+  if (error || Gerror || Ferror || Terror) {
+    toast(`${error?.message || Gerror?.message || Ferror?.message || Terror?.message}`, {
+      autoClose: 1000,
+    });
+  }
+
   return (
     <div className="mb-10">
+      {/* horizontal line section */}
       <div className="flex items-center px-12 ">
         <hr className="w-1/2" />
         <p className="px-2">or</p>
         <hr className="w-1/2" />
       </div>
+
+      {/* google,github,fb,twitter login part */}
       <div className="flex items-center justify-center space-x-5">
         <div onClick={() => signInWithGoogle()}>
           <img

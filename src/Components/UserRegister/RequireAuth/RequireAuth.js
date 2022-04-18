@@ -7,6 +7,8 @@ import SpinnerLoading from "../../Spinner/SpinnerLoading";
 const RequireAuth = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const location = useLocation();
+
+  // refreshing problem fixed here
   if (loading) {
     return <SpinnerLoading></SpinnerLoading>;
   }

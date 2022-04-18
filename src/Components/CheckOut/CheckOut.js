@@ -4,9 +4,9 @@ import { ServiceContext } from "../../App";
 import CheckOutForm from "./CheckOutForm/CheckOutForm";
 
 const CheckOut = () => {
+  // used context to show the exact service a user wants to take.
   const [services] = useContext(ServiceContext);
   const { sID } = useParams();
-
   const matched = services.find((item) => item.id === parseInt(sID));
 
   return (
@@ -23,6 +23,7 @@ const CheckOut = () => {
         <p>price: ${matched?.price}</p>
       </div>
 
+      {/* form added here */}
       <CheckOutForm></CheckOutForm>
     </div>
   );

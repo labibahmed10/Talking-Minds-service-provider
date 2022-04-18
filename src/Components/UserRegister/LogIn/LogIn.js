@@ -9,23 +9,26 @@ import "react-toastify/dist/ReactToastify.css";
 import SpinnerLoading from "../../Spinner/SpinnerLoading";
 
 const LogIn = () => {
+  // getting values of inputs
   const emailRef = useRef("");
   const passRef = useRef("");
+
+  // redirection
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
 
+  // firebase hooks for sign in and reset email..
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-
   const [sendPasswordResetEmail, sending, Perror] = useSendPasswordResetEmail(auth);
 
   const handleSignInUserForm = (event) => {
     event.preventDefault();
-
+    // getting values of inputs
     const email = emailRef.current.value;
     const password = passRef.current.value;
 
+    // condition
     if (!email || !password) {
       toast.error("Please Fill Up The Form", {
         position: "top-center",
@@ -36,6 +39,7 @@ const LogIn = () => {
     }
   };
 
+  // reset passwords function
   const sendPassResetEmail = async () => {
     const email = emailRef.current.value;
     await sendPasswordResetEmail(email);
@@ -45,16 +49,17 @@ const LogIn = () => {
     });
   };
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
-
   if (loading) {
     return <SpinnerLoading></SpinnerLoading>;
   }
 
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
   return (
     <div className="w-[34rem] mx-auto mt-28">
+      {/* brand logo */}
       <div>
         <img className="mx-auto" src={logo} alt="" />
       </div>
@@ -67,7 +72,6 @@ const LogIn = () => {
             name="email"
             id="email"
             placeholder="Your Email"
-            required
           />
           <input
             ref={passRef}
@@ -76,9 +80,9 @@ const LogIn = () => {
             name="password"
             id="password"
             placeholder="Your Password"
-            required
           />
 
+          {/* showed error here */}
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
 
           <input
@@ -104,6 +108,7 @@ const LogIn = () => {
           </p>
         </form>
       </div>
+      {/* common sign in methods here */}
       <CommonSignIn></CommonSignIn>
       <ToastContainer theme="dark"></ToastContainer>
     </div>

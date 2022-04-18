@@ -9,6 +9,7 @@ const CheckOutForm = () => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
+    // getting input values
     const email = emailRef.current.value;
     const password = nameRef.current.value;
     const address = addressRef.current.value;
@@ -19,11 +20,11 @@ const CheckOutForm = () => {
         autoClose: 2500,
       });
     } else {
-      toast.success("Thank You So Much For The Booking😃", {
+      toast.success("Thank You For The Booking😃", {
         position: "top-center",
         autoClose: 2500,
       });
-
+      // after successful submit forms are empty again
       emailRef.current.value = "";
       nameRef.current.value = "";
       addressRef.current.value = "";
@@ -74,7 +75,7 @@ const CheckOutForm = () => {
           Checkout
         </button>
       </form>
-
+      {/* toast container added */}
       <ToastContainer theme="dark"></ToastContainer>
     </div>
   );

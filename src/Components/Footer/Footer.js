@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <div className="pt-16 pb-5 bg-[#F4FCFA] text-slate-500">
       <div className="flex md:flex-row flex-col-reverse md:justify-around mb-10">
+        {/* footer left side texts */}
         <div className="flex justify-between md:justify-around md:gap-40 px-5 md:px-0 mt-10 sm:mt-0">
           <div className="leading-8">
             <h1 className="text-2xl font-semibold">Quick Links</h1>
@@ -22,6 +23,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* right sides image */}
         <div className="mx-auto md:mx-0">
           <img src={logo} alt="" />
           <h2>Email: info@talkingminds.com</h2>
@@ -29,6 +31,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* copyright text */}
       <h2 className="text-center mt-3 text-sm">Copyright &copy; 2022.All Rights Reserved to Labib Ahmed.</h2>
     </div>
   );

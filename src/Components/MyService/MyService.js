@@ -3,8 +3,10 @@ import { ServiceContext } from "../../App";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 const MyService = () => {
+  // using context api to share data
   const [services, setServices] = useContext(ServiceContext);
 
+  // fetching data to show the service cards
   useEffect(() => {
     fetch("/service.json")
       .then((res) => res.json())
@@ -21,6 +23,7 @@ const MyService = () => {
         </p>
       </div>
 
+      {/* service sections data from here */}
       <div className="grid md:grid-cols-3 grid-cols-1 gap-10 py-20 md:px-20 px-10 place-items-center">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>

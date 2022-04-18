@@ -9,6 +9,7 @@ import SpinnerLoading from "../../Spinner/SpinnerLoading";
 import CommonSignIn from "../CommonSignIn/CommonSignIn";
 
 const Register = () => {
+  // getting values of inputs
   const emailRef = useRef("");
   const nameRef = useRef("");
   const passRef = useRef("");
@@ -17,17 +18,20 @@ const Register = () => {
   const [check, setChecked] = useState();
   const navigate = useNavigate();
 
+  // firebase hook method for create user
   const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, {
     sendEmailVerification: true,
   });
 
   const handleCreateUserForm = (event) => {
     event.preventDefault();
+    // getting values of inputs
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passRef.current.value;
     const conPass = conPassRef.current.value;
 
+    // conditions
     if (!name || !password || !email || !conPass) {
       toast.error("Please Fill Up The Form", {
         position: "top-center",
@@ -60,6 +64,7 @@ const Register = () => {
 
   return (
     <div className="w-[34rem] mx-auto mt-24">
+      {/* logo */}
       <div>
         <img className="mx-auto" src={logo} alt="" />
       </div>
@@ -72,7 +77,6 @@ const Register = () => {
             name="name"
             id="name"
             placeholder="Your Name"
-            required
           />
           <input
             ref={emailRef}
@@ -89,7 +93,6 @@ const Register = () => {
             name="password"
             id="password"
             placeholder="Your Password"
-            required
           />
           <input
             ref={conPassRef}
@@ -98,9 +101,8 @@ const Register = () => {
             name="conPassword"
             id="conPass"
             placeholder="Confirm Password"
-            required
           />
-
+          {/* error message shown here */}
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
 
           <div className="flex items-center space-x-1">
@@ -130,6 +132,7 @@ const Register = () => {
             </Link>
           </p>
         </form>
+        {/* common sign in method */}
         <CommonSignIn></CommonSignIn>
         <ToastContainer theme="dark"></ToastContainer>
       </div>

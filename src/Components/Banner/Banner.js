@@ -4,9 +4,9 @@ import doctor from "../../images/doctor.png";
 const Banner = () => {
   return (
     <div className="background h-full py-20 flex md:flex-row flex-col-reverse items-center md:justify-around ">
+      {/* AOS animation added here */}
       <div
         data-aos="fade-right"
-        // data-aos-offset="1000"
         data-aos-easing="ease-in-sine"
         data-aos-duration="1000"
         className="text-[aliceblue] md:pt-0 pt-10 pl-5"
@@ -23,6 +23,7 @@ const Banner = () => {
         <button className="my-6 py-3 px-5 bg-[#26ABA3] rounded-full font-semibold">Get a Consultaion</button>
       </div>
 
+      {/* AOS animation added here */}
       <div
         data-aos="fade-left"
         data-aos-anchor="#example-anchor"
