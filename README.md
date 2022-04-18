@@ -1,18 +1,19 @@
 # `Talking Minds`
 
-## `Live Site Here-` [click here] ()
+## `Live Site Here-` [click here](https://talkingminds-d1263.web.app/home)
 
 > # What I Have Used In This Projects-
 
 - ### I have used React-Router.
 - ### Tailwind CSS
 - ### Implemented Protected route so that a user must have to logged in to that page.
-- ### Used React-firebase-hook for authentication.
 - ### Firebase have used for Authentication.
-- ### React-Toast been used.
+- ### Used React-firebase-hook.
+- ### React-Toastify been used.
 - ### Used React AOS-animation library.
 - ### Used React Framer-motion library.
-- ### Made website responsive.
+- ### Made total website responsive for pc and phone.
+- ### Wrote about me and some basic questions.
 
 # Getting Started with Create React App
 
