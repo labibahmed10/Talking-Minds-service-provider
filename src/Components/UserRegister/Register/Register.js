@@ -106,23 +106,16 @@ const Register = () => {
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
 
           <div className="flex items-center space-x-1">
-            <input
-              onClick={() => setChecked(!check)}
-              className="w-4 h-5"
-              type="checkbox"
-              name="check"
-              id="check"
-            />
+            <input onClick={() => setChecked(!check)} className="w-4 h-5" type="checkbox" name="check" id="check" />
             <label htmlFor="check">I Agree With The Terms & Condition</label>
           </div>
 
           <input
             disabled={!check}
-            className={`w-full my-3 py-3 text-lg font-semibold text-[aliceblue] cursor-pointer ${
-              check ? "bg-[#26ABA3]" : "bg-[#15615c]"
-            }`}
+            className={`w-full my-3 py-3 text-lg font-semibold text-[aliceblue] cursor-pointer ${check ? "bg-[#26ABA3]" : "bg-[#15615c]"}`}
             type="submit"
             value="Register"
+            id="submit"
           />
 
           <p className="text-center">
