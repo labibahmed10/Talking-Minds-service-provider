@@ -85,7 +85,12 @@ const LogIn = () => {
           {/* showed error here */}
           {error ? <p className="text-center text-red-500">{error?.message}</p> : ""}
 
-          <input className="w-full py-3 my-2 bg-[#26ABA3] text-lg font-semibold text-[aliceblue] cursor-pointer" type="submit" value="LogIn" />
+          <input
+            id="login"
+            className="w-full py-3 my-2 bg-[#26ABA3] text-lg font-semibold text-[aliceblue] cursor-pointer"
+            type="submit"
+            value="LogIn"
+          />
 
           <p className="text-center py-2 text-gray-500">
             New In Talking Minds?{" "}
