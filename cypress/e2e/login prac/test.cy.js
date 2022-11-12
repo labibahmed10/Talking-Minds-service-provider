@@ -1,8 +1,9 @@
 /// <reference types="cypress" />;
 
 describe("will test the signup and signin test", () => {
-  // beforeEach(() => {
-  // });
+  beforeEach(() => {
+    cy.viewport(1400, 768);
+  });
 
   it("should test the sign up a user", () => {
     cy.visit("http://localhost:3000/login");
@@ -13,7 +14,7 @@ describe("will test the signup and signin test", () => {
     cy.get("#conPass").type("Asdasd123");
     cy.get("#check").click();
     cy.get("#submit").click();
-    cy.wait(4000);
+    cy.wait(2000);
     cy.location("pathname", "/login");
   });
 
@@ -21,8 +22,12 @@ describe("will test the signup and signin test", () => {
     cy.get("#email").type("check@gmail.com");
     cy.get("#password")?.type("Asdasd123");
     cy.get("#login").click();
-    cy.wait(4000);
+    cy.wait(2000);
     cy.location("pathname", "/");
+  });
+
+  it("should go the service card place and find the single card", () => {
+    cy.get("#allCards");
   });
 
   it("should go to the check in page", () => {
